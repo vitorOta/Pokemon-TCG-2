@@ -1,5 +1,6 @@
 package com.vitorota.pokemontcg2.view
 
+import android.app.Application
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -10,7 +11,7 @@ import com.vitorota.pokemontcg2.domain.usecase.SearchCardUseCase
 import com.vitorota.pokemontcg2.domain.usecase.SearchCardUseCaseImpl
 import kotlinx.coroutines.launch
 
-class MainViewModel : ViewModel() {
+class MainViewModel() : ViewModel() {
 
     private val useCase: SearchCardUseCase = SearchCardUseCaseImpl(
         CardRepositoryImpl(

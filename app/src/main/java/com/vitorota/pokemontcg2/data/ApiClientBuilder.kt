@@ -14,7 +14,6 @@ object ApiClientBuilder {
     fun <T> createApi(
         apiInterface: Class<T>
     ): T {
-
         val client = baseClientHttp.newBuilder()
             .addInterceptor(HttpLoggingInterceptor())
             .build()

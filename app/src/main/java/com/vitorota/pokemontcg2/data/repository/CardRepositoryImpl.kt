@@ -7,7 +7,7 @@ import com.vitorota.pokemontcg2.domain.model.Card
 
 class CardRepositoryImpl(private val api: PokemonTCGApi) : CardRepository {
     override suspend fun searchCardByName(name: String): List<Card> {
-        val apiResponse = api.searchByName()
+        val apiResponse = api.searchByName("name:$name*")
         return convertSchemaToDomain(apiResponse)
     }
 
